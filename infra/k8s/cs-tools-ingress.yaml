@@ -1,0 +1,79 @@
+# Requires an Ingress controller (e.g., nginx) installed in the cluster. Configure cert-manager to issue the
+# `controlstackai-tools-tls` secret or terminate TLS at Cloudflare and forward HTTP to the cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cs-tools-ingress
+  namespace: cs-tools
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - flightdynamics.controlstackai.com
+        - flightcontrol.controlstackai.com
+        - copilot.controlstackai.com
+        - simlab.controlstackai.com
+        - modelintegration.controlstackai.com
+        - dev.controlstackai.com
+      secretName: controlstackai-tools-tls
+  rules:
+    - host: flightdynamics.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: flightdynamics-placeholder
+                port:
+                  number: 80
+    - host: flightcontrol.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: flightcontrol-placeholder
+                port:
+                  number: 80
+    - host: copilot.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: copilot-placeholder
+                port:
+                  number: 80
+    - host: simlab.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: simlab-placeholder
+                port:
+                  number: 80
+    - host: modelintegration.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: modelintegration-placeholder
+                port:
+                  number: 80
+    - host: dev.controlstackai.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: devworkbench-placeholder
+                port:
+                  number: 80
