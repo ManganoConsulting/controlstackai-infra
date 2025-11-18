@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: flightdynamics-placeholder
-          image: <REGISTRY>/flightdynamics-placeholder:latest
+          image: ghcr.io/manganoconsulting/flightdynamics-placeholder:latest
           ports:
             - containerPort: 80
 ---
@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: flightcontrol-placeholder
-          image: <REGISTRY>/flightcontrol-placeholder:latest
+          image: ghcr.io/manganoconsulting/flightcontrol-placeholder:latest
           ports:
             - containerPort: 80
 ---
@@ -94,7 +94,7 @@ spec:
     spec:
       containers:
         - name: copilot-placeholder
-          image: <REGISTRY>/copilot-placeholder:latest
+          image: ghcr.io/manganoconsulting/copilot-placeholder:latest
           ports:
             - containerPort: 80
 ---
@@ -132,7 +132,7 @@ spec:
     spec:
       containers:
         - name: simlab-placeholder
-          image: <REGISTRY>/simlab-placeholder:latest
+          image: ghcr.io/manganoconsulting/simlab-placeholder:latest
           ports:
             - containerPort: 80
 ---
@@ -170,7 +170,7 @@ spec:
     spec:
       containers:
         - name: modelintegration-placeholder
-          image: <REGISTRY>/modelintegration-placeholder:latest
+          image: ghcr.io/manganoconsulting/modelintegration-placeholder:latest
           ports:
             - containerPort: 80
 ---
@@ -208,7 +208,7 @@ spec:
     spec:
       containers:
         - name: devworkbench-placeholder
-          image: <REGISTRY>/devworkbench-placeholder:latest
+          image: ghcr.io/manganoconsulting/devworkbench-placeholder:latest
           ports:
             - containerPort: 80
 ---
